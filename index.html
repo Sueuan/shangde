@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>如果你的梦想，无人接听</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/animate.min.css"/>
+    <link rel="stylesheet" href="css/layout.css">
+    <script src="js/zepto.min.js"></script>
+    <!--<script src="js/jquery.min.js"></script>
+        <script src="js/resetPage-rem.js"></script>
+        <script src="js/common.js"></script>
+    <script src="js/index.js"></script>-->
+</head>
+<!-- 第一步：首先加载一个微信JS-SDK -->
+<script src="js/jweixin-1.0.0.js"></script>
+<!-- 第2步：写一些配置 -->
+<script>
+    function autoPlayAudio() {
+        wx.config({
+            // 配置信息, 即使不正确也能使用 wx.ready
+            debug: false,
+            appId: '',
+            timestamp: 1,
+            nonceStr: '',
+            signature: '',
+            jsApiList: []
+        });
+        wx.ready(function () {
+            var globalAudio = document.getElementById("media");
+            globalAudio.play();
+        });
+    }
+    ;
+    // 解决ios音乐不自动播放的问题
+    autoPlayAudio();
+</script>
+<script>
+    var u = navigator.userAgent, app = navigator.appVersion;
+    var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器
+    var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+    if(isiOS){
+// 禁止iphone浏览器拖动反弹（橡皮筋效果）
+            function stopScrolling(touchEvent) {
+                touchEvent.preventDefault();
+            }
+
+            document.addEventListener('touchstart', stopScrolling, false);
+            document.addEventListener('touchmove', stopScrolling, false);
+      //  alert(123);
+    }
+
+    function resetPage() {
+        var htmls = document.getElementsByTagName('html')[0];
+        // var deviceWidth = document.documentElement.clientWidth;
+        var deviceHeight = document.documentElement.clientHeight;
+        var deviceWidth = deviceHeight * 0.56221889;
+        htmls.style.fontSize = deviceWidth * 0.1333333 + 'px';
+        if (parseInt($('html').css('fontSize')) > 100) {
+            $('html').css('fontSize', '100px')
+        }
+    }
+    resetPage();
+    window.onresize = function () {
+        resetPage();
+    };
+</script>
+<body>
+<div id="audio_btn" class="off rotate" data-event="11205" style="display: block;">
+    <!--  <audio loop="loop" src="source/1.mp3" id="media"></audio> -->
+    <audio src="source/music_1.mp3" id="media" autoplay></audio>
+</div>
+<!-- 第1页 -->
+<div style="display: block" class="page page1">
+    <img class="part_1" src="images/page1_1.png" alt=""/>
+
+    <p class="part_2">我们身边每5个人就有1个,
+        <br>选择离开成长的地方，去往异地。
+        <br>无非想去见见自己的梦想。
+        <br>
+        <br>2.49亿流动人口，
+        <br>每个人即便再不起眼，
+        <br>心中也怀揣着能装下世界的梦。
+    </p>
+
+    <p class="part_3"></p>
+
+    <div style="display: none" class="cc">可是你的梦想,并没有人为你加油。</div>
+    <img class="part_4" src="images/page1_2.png" alt=""/>
+    <img class="arrows" src="images/arrows.png" alt=""/>
+</div>
+<!-- 第2页 -->
+<div style="display: none" class="page page2">
+    <img class="part_1" src="images/page2_1.png" alt="">
+
+    <p class="part_2"></p>
+
+    <div style="display:none" class="dd">想起了刚来北京的时候</div>
+    <img class="part_3" src="images/page2_3.png" alt=""/>
+    <img class="part_4" src="images/page2_2.png" alt=""/>
+    <img class="part_5" src="images/page2_2.png" alt=""/>
+
+    <p class="part_6"></p>
+
+    <div style="display:none" class="ee">我给你擦擦,你可别哭了~</div>
+    <img class="part_7" src="images/page2_4.png" alt="">
+
+    <div class="page2_cyl"></div>
+</div>
+<!-- 第3页 -->
+<div style="display: none" class="page page3">
+    <img class="part_1" src="images/page2_1.png" alt="">
+
+    <p class="part_2"></p>
+
+    <div style="display:none" class="ff">未曾深夜痛哭过 不足以谈人生</div>
+    <img class="part_3" src="images/page2_3.png" alt="">
+    <!--    <img class="part_4" src="images/page2_2.png" alt="">
+    <img class="part_5" src="images/page2_2.png" alt=""> -->
+    <p class="part_6"></p>
+
+    <div style="display:none" class="gg"> 哟哦哦~那你和我说咯</div>
+    <!--  <img class="part_7" src="images/page2_4.png" alt=""/> -->
+    <img class="arrows" src="images/arrows.png" alt=""/>
+</div>
+<!--4初到北京-->
+<div style="display: none" class="page  index_page">
+    <!--女孩-->
+    <img class="part_1" src="images/spic_2.png" alt=""/>
+    <!--上面标题-->
+    <div class="part_2">
+        <p class="text1"> “我和北京的第一个夏天，</p>
+
+        <p class="text2"> 我一个人，北京38℃”</p>
+
+        <p class="text3">乘车去大兴，是坐公交还是打车呢？</p>
+    </div>
+    <!--右侧气泡-->
+    <a class="btn_4">
+        <img class="part_3 " src="images/icon_2.png" alt=""/>
+
+        <div class="part_text3">
+            <p class="text1"></p>
+
+            <p class="text2"></p>
+
+            <p class="text3"></p>
+        </div>
+        <div style="display: none" class="aa">
+            <p class="text1"> 出租车</p>
+
+            <p class="text2"> 耗时40分钟</p>
+
+            <p class="text3">2.3X20+13=59元</p>
+        </div>
+    </a>
+    <!--左侧气泡-->
+    <a class="btn_4">
+        <img class="part_4 " src="images/icon_1.png" alt=""/>
+
+        <div class="part_text4">
+            <p class="text1"></p>
+
+            <p class="text2"></p>
+
+            <p class="text3"></p>
+        </div>
+        <div style="display: none" class="bb">
+            <p class="text1">公交？</p>
+
+            <p class="text2"> 耗时70分钟</p>
+
+            <p class="text3">5元</p>
+        </div>
+    </a>
+
+    <p class="part_5">帮我做一个选择吧！</p>
+</div>
+<!--5超市购物-->
+<div style="display: none" class="page market_page">
+    <!--女孩-->
+    <img class="part_1" src="images/market_2.png" alt=""/>
+    <!--上面标题-->
+    <div class="part_2">
+        <p class="text1"> “租了一个单间交完押金，</p>
+
+        <p class="text2"> 一个人去超市买生活用品”</p>
+
+        <p class="text3">钱得省着花，先看看促销区！</p>
+    </div>
+    <!--右侧气泡-->
+    <a class="btn_2">
+        <img class="part_3" src="images/icons_1.png" alt=""/>
+        <img class="part_3" src="images/icons_1.png" alt=""/>
+    </a>
+    <img class="arrows" src="images/arrows.png" alt=""/>
+</div>
+<!--6面试-->
+<div style="display: none" class="page mianshi_page">
+    <div class="part_1">
+        <br/>我与理想的公司总是失之交臂，
+        <br/>我安慰自己说，
+        <br/>努力可以弥补学历。
+        <br/>然而现实总是很冷静的敲醒我。
+        <br/>好吧，梦想以后再说。
+    </div>
+    <img class="part_2" src="images/ms_1.png" alt=""/>
+    <img class="part_3" src="images/ms_2.png" alt=""/>
+    <img class="part_2" src="images/ms_1.png" alt=""/>
+    <img class="part_3" src="images/ms_2.png" alt=""/>
+    <img class="arrows" src="images/arrows.png" alt=""/>
+</div>
+<!--7办公环境-->
+<div style="display: none" class="page office_page">
+    <!--女孩-->
+    <img class="part_1" src="images/office_2.png" alt=""/>
+    <!--上面标题-->
+    <div class="part_2">
+        <p class="text1">“ 我的同事都在和我吐槽，</p>
+
+        <p class="text2"> 家长里短，和叨叨办公室闲话”</p>
+
+        <p class="text3"> 如果我未来也要变成这样，</p>
+
+        <p class="text4"> 我不愿意…</p>
+    </div>
+    <!--右侧气泡-->
+    <a class="btn_7">
+        <img class="part_3 " src="images/icon_2.png" alt=""/>
+
+        <div class="part_text3">
+            <p class="text1">我想换工作...</p>
+        </div>
+    </a>
+    <!--左侧气泡-->
+    <!--  <a class="btn_3">
+          <img class="part_4 " src="images/icon_1.png" alt=""/>
+
+          <div class="part_text4">
+              <p class="text1">难道回老家吗？</p>
+          </div>
+      </a>-->
+</div>
+<!--8学历困扰-->
+<div style="display: none" class="page xueli_page">
+    <div class="part_1">
+        <p class="text1">
+            “ 有人给我推荐工作，但是需要本科学历，<br/>
+            我尴尬的笑了。”<br/>
+            没有本科学历让我的努力变得苍白无力!
+        </p>
+    </div>
+    <img class="part_2" src="images/xueli_1.png" alt=""/>
+    <img class="part_3" src="images/xueli_2.png" alt=""/>
+    <img class="part_3" src="images/xueli_2.png" alt=""/>
+    <img class="arrows" src="images/arrows.png" alt=""/>
+</div>
+<!--9天桥迷茫-->
+<div style="display: none" class="page bridge_page">
+    <!--女孩-->
+    <!--  <img class="part_1" src="images/spic_2.png" alt=""/>-->
+    <!--上面标题-->
+    <div class="part_2">
+        <p class="text1">“ 来这里一年了，</p>
+
+        <p class="text2">卡里余额不到1000元</p>
+
+        <p class="text3"> 越夜越美丽的北京，</p>
+
+        <p class="text4"> 我要去向哪里？”</p>
+    </div>
+    <div class="bridge_xz">帮我选一条路吧！</div>
+    <!--右侧气泡-->
+    <a class="btn_9">
+        <img class="part_3 " src="images/icon_2.png" alt=""/>
+
+        <div class="part_text3">
+            <p class="text1">回家睡一觉就好了</p>
+        </div>
+    </a>
+    <!--左侧气泡-->
+    <a class="btn_6">
+        <img class="part_4 " src="images/icon_1.png" alt=""/>
+
+        <div class="part_text4">
+            <p class="text1">难道回老家吗？</p>
+        </div>
+    </a>
+</div>
+<!--10人生感悟-->
+<div style="display: none" class="page ganwu_page">
+    <img class="part_1" src="images/icon_7.png" alt=""/>
+    <img class="part_2" src="images/icon_9.png" alt=""/>
+    <img class="part_3" src="images/icon_10.png" alt=""/>
+    <img class="part_2" src="images/icon_9.png" alt=""/>
+    <img class="part_3" src="images/icon_10.png" alt=""/>
+    <img class="part_4" src="images/icon_8.png" alt=""/>
+
+    <div class="part_5"></div>
+</div>
+<!--11考取本科-->
+<div style="display: none" class="page benke_page">
+    <div class="part_1">
+        <br/>我想自考一个本科学历，
+        <br/>不刷剧不看综艺，每天晚睡1小时，
+        <br/>这个决定我没有告诉任何家人朋友。
+        <br/>一年后的我拿到本科证书
+        <br/>会是什么样子？
+    </div>
+    <img class="part_2" src="images/icon_12.png" alt=""/>
+    <img class="part_3" src="images/icon_13.png" alt=""/>
+    <img class="part_4" src="images/icon_14.png" alt=""/>
+    <img class="arrows" src="images/arrows.png" alt=""/>
+</div>
+<!--12使用场景-->
+<div style="display: none" class="page cj_page">
+    <img class="part_1" src="images/cj_1.png" alt=""/>
+    <img class="part_2" src="images/cj_2.png" alt=""/>
+    <img class="part_3" src="images/cj_3.png" alt=""/>
+    <img class="part_4" src="images/cj_4.png" alt=""/>
+    <img class="arrows" src="images/arrows.png" alt=""/>
+</div>
+<!--13新办公环境-->
+<div style="display: none" class="page huanjing_page">
+    <div class="part_1">
+        <br/>换了工作,有了新的伙伴。
+        <br/> 第一次知道原来优秀的人有那么多，
+        <br/> 第一次抛弃了“不行就回家”的想法。
+        <br/> “不行？那就要变得更行。”
+    </div>
+    <img class="part_2" src="images/icon_18.png" alt=""/>
+    <img class="part_3" src="images/icon_17.png" alt=""/>
+    <img class="arrows" src="images/arrows.png" alt=""/>
+</div>
+<!--14居住公寓-->
+<div style="display: none" class="page gongyu_page">
+    <div class="part_1">
+        <p class="tetx1"> 换到一个青年公寓，</p>
+
+        <p class="tetx2">周围大多是互联网公司的年轻人，</p>
+
+        <p class="tetx3"> 在北京终于有了自己的朋友，</p>
+
+        <p class="tetx4">我们成为彼此的依靠。</p>
+
+        <p class="tetx5"> “房租贵了，似乎我的世界却更大了。”</p>
+
+    </div>
+    <img class="part_2" src="images/icon_15.png" alt=""/>
+    <img class="part_3" src="images/icon_16.png" alt=""/>
+    <img class="arrows" src="images/arrows.png" alt=""/>
+</div>
+<!--15商城-->
+<div style="display: none" class="page shop_page">
+    <div class="part_1">
+        <p class="text1">再一次站在这个城市二环的天桥上，</p>
+
+        <p class="text2">觉得自己不再是一个无趣的城市背景。</p>
+
+        <p class="text3">这个城市曾给我眼泪，</p>
+
+        <p class="text4">现在却也给予了我改变的勇气和结果。</p>
+
+        <p class="text5">我就是这个城市的一部分。</p>
+    </div>
+    <img class="part_2" src="images/shop_1.png" alt=""/>
+    <img class="part_3" src="images/shop_2.png" alt=""/>
+    <img class="part_3" src="images/shop_2.png" alt=""/>
+</div>
+<!-- 16榜样 -->
+<div style="display:none" class="page bangyang_page">
+    <img src="images/bangyang_1.jpg" alt="" class="part_1">
+
+    <div class="part_2 clearfix">
+        <img src="images/bangyang_2.jpg" alt="" class="part_2_1">
+        <img src="images/bangyang_4.jpg" alt="" class="part_2_2">
+    </div>
+    <img src="images/bangyang_3.jpg" alt="" class="part_3">
+
+    <div class="part_4">
+        <img src="images/bangyang_5.jpg" alt="" class="part_4_1">
+    </div>
+    <div class="part_5">
+        <img src="images/bangyang_6.jpg" alt="" class="part_5_1">
+        <img src="images/bangyang_7.jpg" alt="" class="part_5_2">
+    </div>
+    <div class="part_6">
+        <div class="part_6_in">
+            <img src="images/bangyang_8.jpg" alt="" class="part_6_1">
+            <img src="images/bangyang_9.jpg" alt="" class="part_6_2">
+        </div>
+    </div>
+    <img src="images/bangyang_10.jpg" alt="" class="part_7">
+    <img class="arrows" src="images/arrows.png" alt=""/>
+</div>
+<!--17互动-->
+<div style="display:none" class="page hudong_page">
+    <!--  <img src="images/hudong_1.jpg" alt="" class="part_1">-->
+    <img src="images/hudong_2.jpg" alt="" class="part_2">
+    <img src="images/hudong_3.jpg" alt="" class="part_3">
+    <img src="images/hudong_4.jpg" alt="" class="part_4">
+    <img src="images/hudong_5.jpg" alt="" class="part_5">
+    <img src="images/hudong_6.jpg" alt="" class="part_6">
+    <img src="images/hudong_7.jpg" alt="" class="part_7">
+    <img src="images/hudong_8.jpg" alt="" class="part_8">
+    <img src="images/hudong_9.jpg" alt="" class="part_9">
+    <img class="arrows" src="images/arrows.png" alt=""/>
+</div>
+<div class="yindao" style="display: none;">
+    <div class="yindao_bd"></div>
+    <img class="img_1" src="images/yidao.png" alt=""/>
+    <img class="img_2" src="images/yidao_ewm.png" alt=""/>
+</div>
+
+<script src="js/index.js"></script>
+</body>
+</html>
