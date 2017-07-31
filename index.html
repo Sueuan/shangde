@@ -4,6 +4,8 @@
     <meta charset="utf-8"/>
     <title>如果你的梦想，无人接听</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="keywords" content="有的时候我会选择保持沉默图"/>
+    <meta name="description" content="有的时候我会选择保持沉默图"/>
     <link rel="stylesheet" href="css/animate.min.css"/>
     <link rel="stylesheet" href="css/layout.css">
     <script src="js/zepto.min.js"></script>
@@ -39,17 +41,15 @@
     var u = navigator.userAgent, app = navigator.appVersion;
     var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器
     var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
-    if(isiOS){
+    if (isiOS) {
 // 禁止iphone浏览器拖动反弹（橡皮筋效果）
-            function stopScrolling(touchEvent) {
-                touchEvent.preventDefault();
-            }
-
-            document.addEventListener('touchstart', stopScrolling, false);
-            document.addEventListener('touchmove', stopScrolling, false);
-      //  alert(123);
+        function stopScrolling(touchEvent) {
+            touchEvent.preventDefault();
+        }
+        document.addEventListener('touchstart', stopScrolling, false);
+        document.addEventListener('touchmove', stopScrolling, false);
+        //  alert(123);
     }
-
     function resetPage() {
         var htmls = document.getElementsByTagName('html')[0];
         // var deviceWidth = document.documentElement.clientWidth;
@@ -67,7 +67,8 @@
 </script>
 <body>
 <div style="display: none">
-    <img src="images/bridge.png" alt=""/>
+    <h1>有的时候我会选择保持沉默</h1>
+    <img src="images/share.png" alt=""/>
 </div>
 <div id="audio_btn" class="off rotate" data-event="11205" style="display: block;">
     <!--  <audio loop="loop" src="source/1.mp3" id="media"></audio> -->
