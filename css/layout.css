@@ -493,4 +493,4 @@ a{outline:0;border:none;-webkit-tap-highlight-color:transparent;-webkit-tap-high
 .yindao{position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: 4}
 .yindao_bd{width: 100%;height: 100%;background: #000;opacity: 0.8}
 .yindao .img_1{width: 7.5rem;position: absolute;z-index: 2;top: 0;left: 50%;margin-left: -3.75rem;}
-.yindao .img_2{width: 2.6rem;position: absolute;z-index: 2;bottom:1.8rem;left: 50%;margin-left: -1.3rem;}
+.yindao .img_2{width: 3rem;position: absolute;z-index: 2;bottom:1.8rem;left: 50%;margin-left: -1.3rem;}
