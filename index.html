@@ -38,7 +38,6 @@
     autoPlayAudio();
 </script>
 <script>
-
     //初始化分享参数
     function initShareInfo() {
         $.ajax({
@@ -67,7 +66,8 @@
                     //分享到朋友圈
                     wx.onMenuShareTimeline({
 
-                        title: "尚德给你寄来一份新春祝福", // 分享标题
+                        title: "分享标题", // 分享标题
+                        desc: "分享描述", // 分享描述
                         link: "https://sueuan.github.io/shangde/", // 分享链接
                         imgUrl: "http://share.sunlands.com/images/app-icon.png", // 分享图标
                         success: function () {
@@ -82,8 +82,8 @@
                     });
                     //分享给朋友
                     wx.onMenuShareAppMessage({
-                        title: "尚德给你寄来一份新春祝福", // 分享标题
-                        desc: "稍等等", // 分享描述
+                        title: "分享标题", // 分享标题
+                        desc: "分享描述", // 分享描述
                         link: "https://sueuan.github.io/shangde/", // 分享链接
                         imgUrl: "http://share.sunlands.com/images/app-icon.png", // 分享图标
                         //				type: '', // 分享类型,music、video或link，不填默认为link
@@ -102,7 +102,6 @@
             }
         });
     }
-
     initShareInfo()
 </script>
 <script>
